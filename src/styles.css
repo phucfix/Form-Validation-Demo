@@ -63,7 +63,104 @@ h6 {
   isolation: isolate;
 }
 
+:root {
+  --default-color: #E5E7EB;
+  --invalid-color: red;
+  --light-blue: #46B1C9;
+}
+
 /* Fonts */
 html {
   font-family: "Arial", sans-serif;
+}
+
+/* Layout */
+#main-form {
+  width: 50%;
+  margin: 40px auto 0;
+  padding: 20px;
+  border: 1px solid var(--default-color);
+  max-width: 400px;
+  min-width: 200px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Element style*/
+h2 {
+  text-align: center;
+}
+
+span[aria-hidden="true"] {
+  color: red;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+/* Form */
+.form-element {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 5px;
+  border-radius: 3px;
+  appearance: none;
+  border: 1px solid var(--default-color);
+  -webkit-appearance: none; /* Chrome, Safari */
+  -moz-appearance: none;    /* Firefox */
+}
+
+input:invalid,
+select:invalid {
+  border: 1px solid var(--invalid-color);
+}
+
+input:invalid:focus,
+select:invalid:focus {
+  border: 1px solid var(--invalid-color); /* Keep invalid color when focus*/
+  outline: none; /* Remove the blue */
+}
+
+.form-btns {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px 40px;
+  color: white;
+  background-color: blue;
+  border-radius: 6px;
+  border: none;
+}
+
+button:hover {
+  background-color: var(--light-blue);
+}
+
+.message {
+  margin-top: 5px;
+}
+
+.message.error {
+  color: red;
+}
+
+.message.success {
+  color: green;
+}
+
+select {
+  padding: 8px 12px;
+  border: 1px solid var(--default-color);
 }
